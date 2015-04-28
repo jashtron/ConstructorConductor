@@ -1,0 +1,142 @@
+
+
+
+
+var obj = {};
+obj.key1 = 'val1';
+
+var Person = function(name, age, gender) {
+    return {
+        name: name,
+        age: age,
+        gender: gender
+    }
+}
+
+var me = Person('Ben', 23, 'M');
+console.log(me);
+
+
+//---------------------------------------
+
+var obj = {};
+obj.key1 = 'val1';
+
+var Person = function(name, age, gender) {
+	this.name = name;
+	this.age = age;
+	this.gender = gender;
+
+}
+
+var me = new Person('Ben', 23, 'M');
+console.log(me);
+
+//----------------------------------------
+
+
+var Person = function (name, age, gender) {
+
+  //this = Object.create(Person.prototype);
+
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+   // return this; 
+}
+Person.prototype.sayName = function(){
+    console.log(this.name);
+}
+
+var Student = function(name, age, gender, subject, goodGrades) {
+    Person.call(this, name, age, gender);
+    this.subject = subject;
+    this.goodGrades = goodGrades;
+}
+Student.prototype = Object.create(Person.prototype);
+Student.prototyope.gradesImprove = function(){
+	this.goodGrades = true;
+}
+
+var me = new Person('Ben', 23, 'M');
+me.sayName();
+var shay = new Student('Shay', 24, 'F', 'Music', true);
+console.log(shay);
+//shay.sayName();
+var obj = {};
+
+//=======Variable Exapmles===============//
+
+var student = 'Ben';
+
+var students = [];
+
+var isPresent = true;
+
+var deleteUser = function(){};
+
+
+//============practice==========================
+
+var Person = function(){
+    this.property1 = true;
+    this.property2 = true;
+}
+
+Person.prototype.displayData = function(){
+    console.log(this);
+
+}
+
+var Student = function() {
+    Person.call(this);
+    this.newProperty1 = true;
+    this.newProperty2 = true;
+
+};
+
+Student.prototype =
+Object.create(Person.prototype);
+
+var student = new Student();
+student.displayData();
+
+
+String.prototype.reverse = function() {
+    return this.split("").reverse().join("");
+};
+
+var arr = [1, 2, 3];
+
+arr.forEach(function(item)) {
+    console.log(item);
+
+});
+
+\\=====================================
+
+var outer = function() {
+    return function() {
+        alert("hello");
+    }
+
+};
+
+var outerInner = outer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
